@@ -1,68 +1,43 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { MapPin, Mail, Phone, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import emailjs from "@emailjs/browser"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 export function ContactSection() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!name || !email || !message) return
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name || !email || !message) return;
 
-    setIsSubmitting(true)
+    // Your WhatsApp number (use international format without "+" or spaces)
+    const phoneNumber = "13016938399"; // +1 301 693 8399
 
-    try {
-      // Get current date and time
-      const currentDate = new Date().toLocaleString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short'
-      })
+    // Pre-fill the message
+    const text = `Hello, my name is ${name} (${email}).\n\n${message}`;
 
-      await emailjs.send(
-        "service_yd2cy9h",
-        "template_a6ivmy9",
-        {
-          from_name: name,
-          reply_to: email,
-          message: message,
-          current_date: currentDate,
-          // Additional variables for better email content
-          sender_name: name,
-          sender_email: email,
-          contact_message: message
-        },
-        "BoDBNXffcSFVbAIUg"
-      )
-
-      setIsSuccess(true)
-      setName("")
-      setEmail("")
-      setMessage("")
-    } catch (error) {
-      console.error("EmailJS Error:", error)
-      alert("Something went wrong. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-      setTimeout(() => setIsSuccess(false), 3000)
-    }
-  }
+    // Encode and redirect to WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -71,7 +46,7 @@ export function ContactSection() {
       y: 0,
       transition: { type: "spring", stiffness: 100, damping: 15 },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -80,7 +55,7 @@ export function ContactSection() {
       scale: 1,
       transition: { type: "spring", stiffness: 100, damping: 15 },
     },
-  }
+  };
 
   const successVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -89,7 +64,7 @@ export function ContactSection() {
       scale: 1,
       transition: { type: "spring", stiffness: 200, damping: 10 },
     },
-  }
+  };
 
   return (
     <section id="contact" className="py-20">
@@ -136,31 +111,44 @@ export function ContactSection() {
                 <CardDescription>Feel free to reach out.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <motion.div className="flex items-center gap-4" variants={itemVariants}>
+                <motion.div
+                  className="flex items-center gap-4"
+                  variants={itemVariants}
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Phone</p>
-                    <p className="text-sm text-muted-foreground">+92 315 6565 918</p>
+                    <p className="text-sm text-muted-foreground">
+                      +1 301-693-8399
+                    </p>
                   </div>
                 </motion.div>
-                <motion.div className="flex items-center gap-4" variants={itemVariants}>
+                <motion.div
+                  className="flex items-center gap-4"
+                  variants={itemVariants}
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">huzaifa.pro.dev@gmail.com</p>
+                    <p className="text-sm text-muted-foreground">
+                      mshirvan2@gmail.com
+                    </p>
                   </div>
                 </motion.div>
-                <motion.div className="flex items-center gap-4" variants={itemVariants}>
+                <motion.div
+                  className="flex items-center gap-4"
+                  variants={itemVariants}
+                >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">Karachi, Pakistan</p>
+                    <p className="text-sm text-muted-foreground">USA</p>
                   </div>
                 </motion.div>
               </CardContent>
@@ -172,7 +160,9 @@ export function ContactSection() {
             <Card className="h-full overflow-hidden">
               <CardHeader>
                 <CardTitle>Send an Email</CardTitle>
-                <CardDescription>Fill out the form to email me directly.</CardDescription>
+                <CardDescription>
+                  Fill out the form to email me directly.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -208,12 +198,24 @@ export function ContactSection() {
                       required
                     />
                   </motion.div>
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <motion.div
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? (
                         <motion.div
                           animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
                           className="mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"
                         />
                       ) : (
@@ -243,5 +245,5 @@ export function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
