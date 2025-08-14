@@ -82,7 +82,7 @@ export function HeroSection() {
         >
           <motion.div className="space-y-4" variants={itemVariants}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-              Muhammad Huzaifa
+              Mike Shirvani
             </h1>
 
             <div className="flex h-12 items-center justify-center">
@@ -98,8 +98,7 @@ export function HeroSection() {
             className="max-w-4xl text-lg text-muted-foreground md:text-xl"
             variants={itemVariants}
           >
-            Building modern, responsive, and user-friendly web applications with cutting-edge technologies. Passionate
-            about creating seamless digital experiences that solve real-world problems.
+            Accomplished Software Engineer with a proven track record in full stack web development, specializing in scalable, high-performance applications. Adept at collaborating with cross-functional teams to deliver innovative solutions. Passionate about leveraging technology to drive business success and enhance user experiences.
           </motion.p>
 
           <motion.div
@@ -125,7 +124,7 @@ export function HeroSection() {
               className="flex gap-4 pt-8"
               variants={itemVariants}
             >
-              <Link href="https://github.com/huzaifa-io/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/mike-shirvani/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -135,7 +134,7 @@ export function HeroSection() {
                   <Github className="h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/muhammad~huzaifa/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/mike-shirvani/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"

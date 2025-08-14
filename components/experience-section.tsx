@@ -13,48 +13,68 @@ import { Building, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Associate Software Engineer",
-    company: "Saylani Welfare",
-    period: "June 2025 – Present",
+    title: "Senior Software Engineer",
+    company: "TechNova Solutions",
+    period: "Jan 2023 – Present",
     description:
-      "Contributed to the development of internal tools and web applications using Next.js and Node.js. Focused on enhancing user experience and optimizing performance for large datasets.",
+      "Lead the design and development of scalable web applications for enterprise clients. Collaborated with cross-functional teams to deliver high-quality software solutions on time and within budget.",
     achievements: [
-      "Optimized Admin Portal performance for 400K+ records using advanced MongoDB indexing and caching",
-      "Introduced role-based access control with JWT and middleware guards",
-      "Built internal dashboard to streamline task assignment and project tracking",
+      "Architected and implemented a microservices-based platform that improved system reliability and scalability by 40%.",
+      "Mentored junior developers, fostering a culture of continuous learning and code quality.",
+      "Integrated CI/CD pipelines, reducing deployment times by 60%."
     ],
     skills: [
-      "Node.js",
-      "Next.js",
       "React",
-      "MongoDB",
-      "JWT",
-      "Express.js",
-      "GitHub",
-      "Tailwind CSS",
-      "REST APIs",
+      "Node.js",
+      "TypeScript",
+      "Microservices",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Agile",
     ],
   },
   {
-    title: "Skill Accelerator Bootcamp",
-    company: "Saylani Tech",
-    period: "Feb 2025 – June 2025",
+    title: "Software Engineer",
+    company: "InnoTech Labs",
+    period: "Jul 2020 – Dec 2022",
     description:
-      "Completed an intensive full-time bootcamp covering frontend and backend development. Worked on real-world projects under the guidance of industry mentors and followed agile practices.",
+      "Developed and maintained web applications for various clients, focusing on performance, security, and user experience. Participated in all phases of the software development lifecycle.",
     achievements: [
-      "Built multiple mini projects in React.js and Node.js",
-      "Developed a RESTful API with Express.js and MongoDB",
-      "Collaborated with peers using GitHub, improving version control and PR workflows",
+      "Developed a real-time analytics dashboard used by over 10,000 users.",
+      "Enhanced application security by implementing OAuth2 and best practices.",
+      "Collaborated with UI/UX designers to improve customer satisfaction scores by 25%."
     ],
     skills: [
-      "HTML",
-      "CSS",
       "JavaScript",
       "React",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "GitHub",
+      "OAuth2",
+      "UI/UX",
+      "REST APIs",
+    ],
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "Bright Future Tech",
+    period: "Jan 2020 – Jun 2020",
+    description:
+      "Assisted in the development of internal tools and automation scripts. Gained hands-on experience with modern web technologies and agile methodologies.",
+    achievements: [
+      "Automated data processing tasks, reducing manual effort by 30%.",
+      "Contributed to the development of a customer support ticketing system.",
+      "Participated in code reviews and team meetings, improving communication skills."
+    ],
+    skills: [
+      "Python",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Agile",
+      "Git",
     ],
   },
 ];

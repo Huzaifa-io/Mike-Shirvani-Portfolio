@@ -6,60 +6,39 @@ import { Globe, Layout, Code, Server, RefreshCw, Smartphone, Webhook, Database }
 
 const services = [
   {
-    title: "Website Development",
+    title: "Full Stack Web Development",
     description:
-      "Development of responsive and interactive websites for individuals, businesses, or organizations using HTML5, CSS3, JavaScript, and Bootstrap. Ensures mobile-friendly and optimized performance across all devices.",
+      "End-to-end development of scalable web applications using modern frameworks and best practices. Expertise in both frontend and backend technologies to deliver robust solutions.",
     icon: <Globe className="h-10 w-10 text-primary" />,
-    skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Design"],
+    skills: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL"],
   },
   {
-    title: "Frontend Development",
+    title: "Cloud & DevOps Solutions",
     description:
-      "Specialized in building intuitive user interfaces (UIs) and seamless user experiences (UX) with HTML5, CSS3, JavaScript, and React.js. Delivers fast, responsive single-page applications (SPAs).",
-    icon: <Layout className="h-10 w-10 text-primary" />,
-    skills: ["React.js", "UI/UX", "JavaScript", "CSS3"],
-  },
-  {
-    title: "Custom Web Applications",
-    description:
-      "Creation of custom web applications using React.js with backend technologies like Node.js and Express.js. Integrates Firebase for real-time data, authentication, and hosting.",
-    icon: <Code className="h-10 w-10 text-primary" />,
-    skills: ["React.js", "Node.js", "Express.js", "Firebase", "Authentication"],
-  },
-  {
-    title: "Web Hosting and Deployment",
-    description:
-      "Assistance in deploying websites and web applications on platforms like Firebase Hosting, Netlify, or traditional servers. Optimizes performance and ensures secure HTTPS connections.",
+      "Deployment, automation, and management of cloud infrastructure. Implementation of CI/CD pipelines and container orchestration for efficient software delivery.",
     icon: <Server className="h-10 w-10 text-primary" />,
-    skills: ["Firebase Hosting", "Netlify", "Vercel", "HTTPS", "Performance Optimization"],
+    skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"],
   },
   {
-    title: "Maintenance and Updates",
+    title: "API Design & Integration",
     description:
-      "Ongoing maintenance services, including security patches, performance optimizations, and feature updates. Provides backups and uptime monitoring.",
-    icon: <RefreshCw className="h-10 w-10 text-primary" />,
-    skills: ["Security Patches", "Performance Optimization", "Backups", "Monitoring", "Updates"],
-  },
-  {
-    title: "Responsive Design Audits",
-    description:
-      "Evaluation of existing websites for responsiveness across devices and browsers. Implementation of improvements using CSS3 media queries and modern design principles.",
-    icon: <Smartphone className="h-10 w-10 text-primary" />,
-    skills: ["Media Queries", "Cross-browser Testing", "Mobile-first Design", "Accessibility"],
-  },
-  {
-    title: "API Integrations",
-    description:
-      "Integration of third-party APIs (social media, payment gateways, etc.) into web applications using JavaScript and React.js. Ensures secure and efficient data handling.",
+      "Design and integration of secure, scalable RESTful APIs for seamless communication between services and third-party platforms.",
     icon: <Webhook className="h-10 w-10 text-primary" />,
-    skills: ["RESTful APIs", "OAuth", "Social Media APIs", "Data Handling"],
+    skills: ["REST APIs", "OAuth2", "API Security", "Postman"],
   },
   {
-    title: "MERN Stack Development",
+    title: "UI/UX Consulting",
     description:
-      "Full-stack application development using MongoDB, Express.js, React.js, and Node.js. Builds scalable solutions with secure authentication and database management.",
-    icon: <Database className="h-10 w-10 text-primary" />,
-    skills: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      "Consultation and implementation of user-centric interfaces to enhance usability and accessibility across devices.",
+    icon: <Layout className="h-10 w-10 text-primary" />,
+    skills: ["UI/UX", "Accessibility", "Responsive Design", "Material UI"],
+  },
+  {
+    title: "Project Management & Agile Coaching",
+    description:
+      "Guidance on agile methodologies, project planning, and team collaboration to ensure successful project delivery.",
+    icon: <RefreshCw className="h-10 w-10 text-primary" />,
+    skills: ["Agile", "Scrum", "Jira", "Mentoring"],
   },
 ]
 

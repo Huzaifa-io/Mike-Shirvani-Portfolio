@@ -14,63 +14,64 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Programming Languages",
+    icon: <Terminal className="h-8 w-8 text-primary" />,
+    items: [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "HTML5",
+      "CSS3",
+    ],
+  },
+  {
+    category: "Frameworks & Libraries",
     icon: <Layout className="h-8 w-8 text-primary" />,
     items: [
       "React",
       "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Framer Motion",
-      "SEO (Search Engine Optimization)",
-    ],
-  },
-  {
-    category: "Backend",
-    icon: <Server className="h-8 w-8 text-primary" />,
-    items: [
       "Node.js",
-      "Express",
-      "REST APIs",
-      "MongoDB",
-      "Authentication",
-      "Postman",
-      "Socket.IO",
-      "jsPDF",
-    ],
-  },
-  {
-    category: "Database",
-    icon: <Database className="h-8 w-8 text-primary" />,
-    items: ["MongoDB", "Firebase", "Redis", "Supabase"],
-  },
-  {
-    category: "UI/UX",
-    icon: <Palette className="h-8 w-8 text-primary" />,
-    items: [
-      "Tailwind CSS",
+      "Express.js",
+      "Redux",
       "Material UI",
-      "Ant Design",
-      "ShadCn",
-      "BootStrap",
-      "Hero UI",
-      "Framer Motion",
+      "Bootstrap",
     ],
   },
   {
-    category: "DevOps",
+    category: "Databases",
+    icon: <Database className="h-8 w-8 text-primary" />,
+    items: [
+      "MongoDB",
+      "PostgreSQL",
+      "Firebase",
+    ],
+  },
+  {
+    category: "DevOps & Cloud",
     icon: <Workflow className="h-8 w-8 text-primary" />,
-    items: ["Git", "GitHub", "Docker", "AWS", "Vercel", "Netlify"],
+    items: [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Git",
+      "GitHub",
+    ],
   },
   {
-    category: "Tools",
-    icon: <Terminal className="h-8 w-8 text-primary" />,
-    items: ["VS Code", "Postman", "npm/yarn", "MongoDB Compass", "EmailJS"],
-  },
-  {
-    category: "Other",
+    category: "Tools & Other",
     icon: <Globe className="h-8 w-8 text-primary" />,
-    items: ["SEO", "Performance Optimization", "Accessibility", "Web Security"],
+    items: [
+      "VS Code",
+      "Postman",
+      "Jira",
+      "Agile",
+      "REST APIs",
+      "OAuth2",
+      "UI/UX",
+      "Performance Optimization",
+      "Web Security",
+    ],
   },
 ];
 

@@ -18,36 +18,44 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    title: "Web and Mobile App",
-    issuer: "SMIT",
-    date: "March 2025",
+    title: "AWS Certified Solutions Architect – Associate",
+    issuer: "Amazon Web Services",
+    date: "Apr 2024",
     description:
-      "Comprehensive expertise in full stack development, encompassing advanced React patterns, efficient state management, RESTful APIs, scalable backend architecture, and modern deployment workflows.",
-    image: "/211248.jpg",
+      "Validated expertise in designing and deploying scalable, highly available, and fault-tolerant systems on AWS.",
+    image: "/placeholder.svg",
     skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "Firebase",
-      "GitHub",
+      "AWS",
+      "Cloud Architecture",
+      "Scalability",
+      "Security",
     ],
   },
   {
-    title: "Skill Accelerator Bootcamp",
-    issuer: "Saylani Welfare International Trust",
-    date: "May 2025",
+    title: "Certified Kubernetes Administrator (CKA)",
+    issuer: "Cloud Native Computing Foundation",
+    date: "Dec 2023",
     description:
-      "Completed a 4-month bootcamp focused on real-world projects in AI, ML, Mobile, and Web Development. Gained practical experience in cutting-edge technologies through hands-on learning.",
-    image: "/bootcamp.jpg", 
+      "Demonstrated proficiency in managing Kubernetes clusters and deploying containerized applications.",
+    image: "/placeholder.svg",
     skills: [
-      "AI",
-      "Machine Learning",
-      "Mobile Development",
-      "Web Development",
-      "Project-Based Learning",
+      "Kubernetes",
+      "Containers",
+      "DevOps",
+      "Automation",
+    ],
+  },
+  {
+    title: "Professional Scrum Master I (PSM I)",
+    issuer: "Scrum.org",
+    date: "Aug 2023",
+    description:
+      "Certified knowledge of Scrum framework and agile project management best practices.",
+    image: "/placeholder.svg",
+    skills: [
+      "Scrum",
+      "Agile",
+      "Project Management",
     ],
   },
 ]
