@@ -7,28 +7,26 @@ import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ✅ SEO Optimized Metadata
 export async function generateMetadata(): Promise<Metadata> {
-  const url = "https://www.muhammad-huzaifa.me";
+  const url = "https://mike-shirvani-portfolio.vercel.app";
 
   return {
     title: {
-      default: "Muhammad Huzaifa | Full Stack Developer",
-      template: "%s | Muhammad Huzaifa",
+      default: "Mike Shirvani | Full Stack Developer",
+      template: "%s | Mike Shirvani",
     },
     description:
       "Full Stack Web Developer specializing in React, Next.js, Node.js, and modern web applications. View projects, skills, and contact information.",
     keywords: [
-      "Muhammad Huzaifa",
-      "Muhammad Huzaifa Portfolio",
-      "Huzaifa Portfolio",
-      "Muhammad Huzaifa Personal Website",
+      "Mike Shirvani",
+      "Mike Shirvani Portfolio",
+      "Mike Portfolio",
+      "Mike Shirvani Personal Website",
       "Developer Portfolio",
       "Full Stack Web Developer Portfolio",
       "Full Stack Developer",
       "Software Developer Portfolio",
       "Web Developer Portfolio",
-      "Portfolio Website",
       "React Developer",
       "Next.js Developer",
       "TypeScript Developer",
@@ -43,35 +41,33 @@ export async function generateMetadata(): Promise<Metadata> {
       "Modern Web Development",
       "Software Engineer",
     ],
-    authors: [
-      { name: "Muhammad Huzaifa", url: "https://www.muhammad-huzaifa.me" },
-    ],
-    creator: "Muhammad Huzaifa",
-    publisher: "Muhammad Huzaifa",
-    applicationName: "Muhammad Huzaifa Portfolio",
+    authors: [{ name: "Mike Shirvani", url }],
+    creator: "Mike Shirvani",
+    publisher: "Mike Shirvani",
+    applicationName: "Mike Shirvani Portfolio",
     openGraph: {
       type: "profile",
       locale: "en_US",
       url,
-      title: "Muhammad Huzaifa | Full Stack Developer",
+      title: "Mike Shirvani | Full Stack Developer",
       description:
-        "Personal portfolio of Muhammad Huzaifa. Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.",
-      siteName: "Muhammad Huzaifa Portfolio",
+        "Personal portfolio of Mike Shirvani. Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.",
+      siteName: "Mike Shirvani Portfolio",
       images: [
         {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "Muhammad Huzaifa - Full Stack Developer Portfolio",
+          alt: "Mike Shirvani - Full Stack Developer Portfolio",
           type: "image/jpeg",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      site: "@HuzaifaDevz",
-      creator: "@HuzaifaDevz",
-      title: "Muhammad Huzaifa | Full Stack Developer",
+      site: "@MikeShirvani", // update if there's an actual handle
+      creator: "@MikeShirvani",
+      title: "Mike Shirvani | Full Stack Developer",
       description:
         "Full Stack Web Developer specializing in React, Next.js, Node.js, and modern web applications.",
       images: ["/og-image.jpg"],
@@ -112,38 +108,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // ✅ WebSite Schema - Primary for Site Name Display
+  // ✅ WebSite Schema
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Muhammad Huzaifa Portfolio",
-    alternateName: [
-      "Muhammad Huzaifa",
-      "Huzaifa",
-    ],
-    url: "https://www.muhammad-huzaifa.me",
+    name: "Mike Shirvani Portfolio",
+    alternateName: ["Mike Shirvani", "Mike"],
+    url: "https://mike-shirvani-portfolio.vercel.app",
     description:
-      "Personal portfolio website of Muhammad Huzaifa - Full Stack Web Developer specializing in React, Next.js, Node.js, and modern web applications",
+      "Personal portfolio website of Mike Shirvani - Full Stack Web Developer specializing in React, Next.js, Node.js, and modern web applications",
     inLanguage: "en-US",
     isAccessibleForFree: true,
     author: {
       "@type": "Person",
-      name: "Muhammad Huzaifa",
+      name: "Mike Shirvani",
     },
   };
 
-  // ✅ Person Schema - Individual Portfolio Focus
+  // ✅ Person Schema
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Muhammad Huzaifa",
-    givenName: "Muhammad",
-    familyName: "Huzaifa",
-    alternateName: ["Huzaifa", "Muhammad Huzaifa"],
-    url: "https://www.muhammad-huzaifa.me",
+    name: "Mike Shirvani",
+    givenName: "Mike",
+    familyName: "Shirvani",
+    alternateName: ["Mike", "Mike Shirvani"],
+    url: "https://mike-shirvani-portfolio.vercel.app",
     image: {
       "@type": "ImageObject",
-      url: "https://www.muhammad-huzaifa.me/og-image.jpg",
+      url: "https://mike-shirvani-portfolio.vercel.app/og-image.jpg",
       width: 1200,
       height: 630,
     },
@@ -175,13 +168,13 @@ export default function RootLayout({
       "API Development",
     ],
     sameAs: [
-      "https://github.com/huzaifa-io/",
-      "https://www.linkedin.com/in/muhammad~huzaifa/",
-      "https://x.com/HuzaifaDevz",
+      "https://github.com/huzaifa-io/", // update if Mike's GitHub is different
+      "https://www.linkedin.com/in/mike-shirvani/",
+      "https://x.com/MikeShirvani", // update handle if needed
     ],
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.muhammad-huzaifa.me",
+      "@id": "https://mike-shirvani-portfolio.vercel.app",
     },
   };
 
@@ -190,43 +183,35 @@ export default function RootLayout({
     "@type": "ProfilePage",
     about: {
       "@type": "Person",
-      name: "Muhammad Huzaifa",
+      name: "Mike Shirvani",
     },
-    url: "https://www.muhammad-huzaifa.me",
-    name: "Muhammad Huzaifa - Full Stack Developer Portfolio",
+    url: "https://mike-shirvani-portfolio.vercel.app",
+    name: "Mike Shirvani - Full Stack Developer Portfolio",
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-
-        {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
-        {/* ✅ WebSite Structured Data - MOST IMPORTANT for Site Name */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
           }}
         />
-
-        {/* ✅ Person Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(personSchema),
           }}
         />
-
-        {/* ✅ ProfilePage Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -240,7 +225,6 @@ export default function RootLayout({
           inter.className
         )}
       >
-        {/* Skip navigation for accessibility */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50"
@@ -257,7 +241,6 @@ export default function RootLayout({
           <main id="main-content">{children}</main>
         </ThemeProvider>
 
-        {/* Minimal NoScript fallback */}
         <noscript>
           <div
             style={{

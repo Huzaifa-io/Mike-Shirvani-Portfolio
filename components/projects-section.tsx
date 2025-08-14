@@ -87,88 +87,12 @@ const projects = [
       "https://www.linkedin.com/posts/huzaifa--dev_lovelysteps-ecommerce-fullstackdevelopment-activity-7308018579419889665-LJQO",
     category: "frontend",
   },
-  {
-    title: "Student Portal | Saylani Welfare",
-    description:
-      "A full-featured student portal for managing profiles, courses, and attendance with a user-friendly interface and seamless backend integration.",
-    image: "/lms.png",
-    tags: [
-      "React",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "Express.js",
-      "ShadCn",
-      "Redux",
-    ],
-    liveUrl: "https://student.saylaniwelfare.com/",
-    category: "fullstack",
-  },
-  {
-    title: "Admin Portal | Saylani Welfare",
-    description:
-      "An admin dashboard to manage student data, courses, and reports with real-time updates and intuitive UI for efficient administration.",
-    image: "/lmsa.png",
-    tags: [
-      "React",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "Express.js",
-      "Ant Design",
-      "Redux",
-    ],
-    category: "fullstack",
-  },
-  {
-    title: "E-Commerce App",
-    description:
-      "A fully responsive e-commerce platform with user authentication and shopping cart functionality.",
-    image: "/j.png",
-    tags: ["React", "Tailwind CSS", "Api"],
-    liveUrl: "https://fakesstore.vercel.app/",
-    category: "frontend",
-  },
-
-  {
-    title: "Ticket Booking",
-    description:
-      "A ticket booking app with a seamless user experience for selecting and reserving seats.",
-    image: "/i.png",
-    tags: ["React.js", "Tailwind CSS"],
-    liveUrl: "https://ticket-booking-lac.vercel.app/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_reactjs-activity-7263153787257683968-h-kY",
-    category: "frontend",
-  },
-  {
-    title: "Micro Finance App",
-    description:
-      "A full-stack microfinance system with dashboards, loan management, and transaction logs.",
-    image: "/e.png",
-    tags: ["React", "MongoDB", "Node.js"],
-    liveUrl: "https://frontend-hackathon-microfinanaceapp.vercel.app/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_saylanihackathon-microfinanceapp-techforgood-activity-7289947178565820416-6xWv",
-    category: "fullstack",
-  },
-  {
-    title: "Welfare Management",
-    description:
-      "A welfare system providing food, wedding support, emergency aid, and medical help.",
-    image: "/a.png",
-    tags: ["React", "MongoDB", "Tailwind CSS", "Ant design"],
-    liveUrl: "https://ameerhamzasaadatwelfare.vercel.app/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_welfaremanagement-donorengagement-beneficiarysupport-activity-7303150456967462912-ZR3d",
-    category: "fullstack",
-  },
 ];
 
 export function ProjectsSection() {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 6;
+  const projectsPerPage = 3;
 
   const filteredProjects =
     activeTab === "all"
