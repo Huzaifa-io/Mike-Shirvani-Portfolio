@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://www.muhammad-huzaifa.me',
+    siteUrl: 'https://mike-shirvani-portfolio.vercel.app',
     generateRobotsTxt: true,
     changefreq: 'weekly',
     priority: 1.0,

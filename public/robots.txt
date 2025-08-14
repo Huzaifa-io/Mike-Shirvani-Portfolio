@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://www.muhammad-huzaifa.me/sitemap.xml
+Sitemap: https://mike-shirvani-portfolio.vercel.app/sitemap.xml
