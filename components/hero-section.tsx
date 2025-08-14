@@ -124,7 +124,7 @@ export function HeroSection() {
               className="flex gap-4 pt-8"
               variants={itemVariants}
             >
-              <Link href="https://github.com/mike-shirvani/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/mshirvan2/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -134,7 +134,7 @@ export function HeroSection() {
                   <Github className="h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/mike-shirvani/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/michaelshirvani/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"

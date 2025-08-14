@@ -48,17 +48,12 @@ export function Footer() {
 
   const socialLinks = [
     {
-      href: "https://github.com/huzaifa-io",
+      href: "https://github.com/mshirvan2",
       icon: <BiLogoGithub className="h-4 w-4" />,
       label: "GitHub",
     },
     {
-      href: "https://x.com/HuzaifaDevz",
-      icon: <FaXTwitter className="h-4 w-4" />,
-      label: "Twitter",
-    },
-    {
-      href: "https://www.linkedin.com/in/muhammad~huzaifa",
+      href: "https://www.linkedin.com/in/michaelshirvani",
       icon: <Linkedin className="h-4 w-4" />,
       label: "LinkedIn",
     },
@@ -78,7 +73,7 @@ export function Footer() {
           variants={itemVariants}
         >
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            &copy; {currentYear} Muhammad Huzaifa. All rights reserved.
+            &copy; {currentYear} Mike Shirvani. All rights reserved.
           </p>
         </motion.div>
 
