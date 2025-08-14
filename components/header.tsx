@@ -58,7 +58,7 @@ export function Header() {
             className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
           >
             <span className="text-primary block [@media(max-width:350px)]:truncate [@media(max-width:350px)]:max-w-[140px]">
-              &lt;Muhammad&nbsp;Huzaifa&nbsp;/&gt;
+              &lt; Mike&nbsp;Shirvani&nbsp;/&gt;
             </span>
           </Link>
         </motion.div>

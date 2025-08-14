@@ -96,9 +96,6 @@ export async function generateMetadata(): Promise<Metadata> {
         "x-default": url,
       },
     },
-    verification: {
-      google: "KKoVDIut7ITjeBEgqkm8I1gPGW9iIRqmU5lbPow-eHE",
-    },
     category: "technology",
   };
 }
