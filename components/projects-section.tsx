@@ -28,64 +28,38 @@ import {
 
 const projects = [
   {
-    title: "Academic Scheduler",
+    title: "Spring Boot Blog Application",
     description:
-      "Create, manage, and share academic timetables with ease. The complete solution for educational institutions.",
-    image: "/t.png",
-    tags: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Ant Design"],
-    liveUrl: "https://academic-scheduling.vercel.app/",
-    category: "fullstack",
-  },
-  {
-    title: "Quiz Application",
-    description:
-      "An interactive quiz app with real-time scoring, role-based access, and result tracking.",
-    image: "/h.png",
+      "Full-stack web app built with Java Spring Boot (MVC architecture), Spring Data JPA, and H2 database. Integrated Thymeleaf for server-side rendering and Spring Security for role-based authentication. Developed RESTful APIs with caching and optimized queries.",
+    image: "/placeholder.svg",
     tags: [
-      "React",
-      "Tailwind CSS",
-      "Node.js",
-      "MongoDB",
-      "ShadCn",
-      "Zustand",
-      "Gemini AI",
+      "Java",
+      "Spring Boot",
+      "Spring Data JPA",
+      "H2 Database",
+      "Thymeleaf",
+      "Spring Security",
     ],
-    liveUrl: "https://quiz.afaq.dev/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_quizmaster-edtech-ai-activity-7309902656003543041-Sixr",
+    liveUrl: "",
     category: "fullstack",
   },
   {
-    title: "Chat Application",
+    title: "Free Scribe – Browser-Based Translation App",
     description:
-      "A real-time chat app built with WebSocket and Firebase for instant messaging and interaction.",
-    image: "/bb.png",
-    tags: ["React", "Firebase", "WebSocket", "Tailwind CSS", "MongoDB"],
-    liveUrl: "https://thechats.vercel.app/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_fullstackdeveloper-webdevelopment-reactjs-activity-7315673632351944719-PaOp",
-    category: "fullstack",
-  },
-
-  {
-    title: "QR Code Generator",
-    description:
-      "A lightweight web app that allows users to generate custom QR codes from URLs or text inputs.",
-    image: "/k.png",
-    tags: ["JavaScript", "HTML5", "CSS3"],
-    liveUrl: "https://qr-seven-zeta.vercel.app/",
+      "Browser-native transcription and translation app using in-browser ML models and Web Workers for real-time performance. Integrated OpenAI models for speech-to-text translation with lightweight UI, designed for secure, serverless environments.",
+    image: "/placeholder.svg",
+    tags: ["React", "Web Workers", "Tailwind CSS", "ML APIs", "OpenAI"],
+    liveUrl: "",
     category: "frontend",
   },
   {
-    title: "Lovely Steps | Shoes Website",
+    title: "Custom PC",
     description:
-      "Wholesale kids' footwear store offering 100+ stylish and affordable shoe varieties including sandals, joggers, and Skechers.",
-    image: "/c.png",
-    tags: ["Next.js", "Tailwind CSS", "ShadCn", "Framer Motion"],
-    liveUrl: "https://lovelysteps.shop/",
-    linkEdinUrl:
-      "https://www.linkedin.com/posts/huzaifa--dev_lovelysteps-ecommerce-fullstackdevelopment-activity-7308018579419889665-LJQO",
-    category: "frontend",
+      "Designed and built a performance-focused desktop setup for multi-container local deployments. Configured BIOS, advanced cooling, and optimized hardware/software integration. Ensured stability, compatibility, and long-term reliability.",
+    image: "/placeholder.svg",
+    tags: ["Hardware", "BIOS", "Cooling Systems", "Multi-Container Dev"],
+    liveUrl: "",
+    category: "other",
   },
 ];
 
@@ -99,7 +73,6 @@ export function ProjectsSection() {
       ? projects
       : projects.filter((project) => project.category === activeTab);
 
-  // Calculate pagination
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = filteredProjects.slice(
@@ -108,7 +81,6 @@ export function ProjectsSection() {
   );
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
-  // Reset to page 1 when changing tabs
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setCurrentPage(1);
@@ -118,9 +90,7 @@ export function ProjectsSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -129,19 +99,11 @@ export function ProjectsSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
+      transition: { type: "spring", stiffness: 100, damping: 15 },
     },
     hover: {
       y: -10,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-      },
+      transition: { type: "spring", stiffness: 300, damping: 20 },
     },
   };
 
@@ -149,28 +111,20 @@ export function ProjectsSection() {
     hover: {
       scale: 1.03,
       boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-      },
+      transition: { type: "spring", stiffness: 300, damping: 20 },
     },
   };
 
   const imageVariants = {
     hover: {
       scale: 1.1,
-      transition: {
-        duration: 0.3,
-      },
+      transition: { duration: 0.3 },
     },
   };
 
-  // Generate pagination items
   const renderPaginationItems = () => {
     const items = [];
 
-    // Always show first page
     items.push(
       <PaginationItem key="first">
         <PaginationLink
@@ -189,7 +143,6 @@ export function ProjectsSection() {
       </PaginationItem>
     );
 
-    // Show ellipsis if needed
     if (currentPage > 3) {
       items.push(
         <PaginationItem key="ellipsis-1">
@@ -198,13 +151,12 @@ export function ProjectsSection() {
       );
     }
 
-    // Show current page and neighbors
     for (
       let i = Math.max(2, currentPage - 1);
       i <= Math.min(totalPages - 1, currentPage + 1);
       i++
     ) {
-      if (i === 1 || i === totalPages) continue; // Skip first and last as they're always shown
+      if (i === 1 || i === totalPages) continue;
       items.push(
         <PaginationItem key={i}>
           <PaginationLink
@@ -224,7 +176,6 @@ export function ProjectsSection() {
       );
     }
 
-    // Show ellipsis if needed
     if (currentPage < totalPages - 2) {
       items.push(
         <PaginationItem key="ellipsis-2">
@@ -233,7 +184,6 @@ export function ProjectsSection() {
       );
     }
 
-    // Always show last page if there's more than one page
     if (totalPages > 1) {
       items.push(
         <PaginationItem key="last">
@@ -291,6 +241,7 @@ export function ProjectsSection() {
               <TabsTrigger value="all">All Projects</TabsTrigger>
               <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
               <TabsTrigger value="frontend">Frontend</TabsTrigger>
+              <TabsTrigger value="other">Other</TabsTrigger>
             </TabsList>
           </div>
           <AnimatePresence mode="wait">
@@ -376,7 +327,6 @@ export function ProjectsSection() {
                   ))}
                 </motion.div>
 
-                {/* Pagination */}
                 {totalPages > 1 && (
                   <motion.div
                     className="mt-10"

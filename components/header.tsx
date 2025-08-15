@@ -1,42 +1,46 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { ModeToggle } from "@/components/mode-toggle"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const navItems = [
     { name: "Skills", href: "#skills" },
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
     { name: "Certificates", href: "#certificates" },
+    { name: "Education", href: "#education" },
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
-        }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -49,12 +53,10 @@ export function Header() {
         >
           <Link
             href="/"
-            onClick={
-              () => {
-                setIsMenuOpen(false)
-                window.scrollTo({ top: 0, behavior: "smooth" })
-              }
-            }
+            onClick={() => {
+              setIsMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
           >
             <span className="text-primary block [@media(max-width:350px)]:truncate [@media(max-width:350px)]:max-w-[140px]">
@@ -62,7 +64,6 @@ export function Header() {
             </span>
           </Link>
         </motion.div>
-
 
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item, i) => (
@@ -72,7 +73,10 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 * i }}
             >
-              <Link href={item.href} className="text-sm font-medium hover:text-primary transition-colors">
+              <Link
+                href={item.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
                 {item.name}
               </Link>
             </motion.div>
@@ -88,8 +92,17 @@ export function Header() {
 
         <div className="flex md:hidden items-center gap-4">
           <ModeToggle />
-          <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle menu">
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </div>
@@ -126,5 +139,5 @@ export function Header() {
         )}
       </AnimatePresence>
     </motion.header>
-  )
+  );
 }

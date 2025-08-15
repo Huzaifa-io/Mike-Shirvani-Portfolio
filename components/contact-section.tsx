@@ -20,23 +20,28 @@ export function ContactSection() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !email || !message) return;
 
-    // Your WhatsApp number (use international format without "+" or spaces)
-    const phoneNumber = "13016938399"; // +1 301 693 8399
+    setIsSubmitting(true); // start loading
 
-    // Pre-fill the message
-    const text = `Hello, my name is ${name} (${email}).\n\n${message}`;
-
-    // Encode and redirect to WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      text
-    )}`;
-    window.open(whatsappUrl, "_blank");
+    try {
+      const phoneNumber = "13016938399"; // +1 301 693 8399
+      const text = `Hello, my name is ${name} (${email}).\n\n${message}`;
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        text
+      )}`;
+      window.open(whatsappUrl, "_blank");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending WhatsApp message:", error);
+    } finally {
+      setIsSubmitting(false); // stop loading
+    }
   };
 
   const itemVariants = {
@@ -67,7 +72,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <motion.h2
@@ -221,23 +226,11 @@ export function ContactSection() {
                       ) : (
                         <Send className="h-4 w-4 mr-2" />
                       )}
-                      {isSubmitting ? "Sending..." : "Send Email"}
+                      {isSubmitting
+                        ? "Sending..."
+                        : "Send Message Via WhatsApp"}
                     </Button>
                   </motion.div>
-
-                  <AnimatePresence>
-                    {isSuccess && (
-                      <motion.div
-                        className="mt-4 p-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-md text-sm text-center"
-                        variants={successVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit={{ opacity: 0, scale: 0.8 }}
-                      >
-                        Email sent successfully! I'll get back to you soon.
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </form>
               </CardContent>
             </Card>

@@ -61,7 +61,7 @@ export function Footer() {
 
   return (
     <motion.footer
-      className="border-t bg-muted/50"
+      className="border-t"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
