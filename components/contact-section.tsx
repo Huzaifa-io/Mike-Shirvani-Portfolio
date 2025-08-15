@@ -164,9 +164,9 @@ export function ContactSection() {
           <motion.div variants={cardVariants}>
             <Card className="h-full overflow-hidden">
               <CardHeader>
-                <CardTitle>Send an Email</CardTitle>
+                <CardTitle>Send a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form to email me directly.
+                  Fill out the form to message me directly.
                 </CardDescription>
               </CardHeader>
               <CardContent>
