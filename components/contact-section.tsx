@@ -153,7 +153,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">USA</p>
+                    <p className="text-sm text-muted-foreground">Gaithersburg, Maryland, United States</p>
                   </div>
                 </motion.div>
               </CardContent>
