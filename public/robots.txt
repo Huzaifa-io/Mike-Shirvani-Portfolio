@@ -1,6 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://mike-shirvani-portfolio.vercel.app/sitemap.xml
