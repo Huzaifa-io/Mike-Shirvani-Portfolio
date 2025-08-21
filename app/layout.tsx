@@ -51,23 +51,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // ✅ WebSite Schema
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Mike Shirvani Portfolio",
-    alternateName: ["Mike Shirvani", "Mike"],
-    url: "https://mike-shirvani-portfolio.vercel.app",
-    description:
-      "Personal portfolio website of Mike Shirvani - Full Stack Web Developer specializing in React, Next.js, Node.js, and modern web applications",
-    inLanguage: "en-US",
-    isAccessibleForFree: true,
-    author: {
-      "@type": "Person",
-      name: "Mike Shirvani",
-    },
-  };
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -78,13 +61,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
       </head>
       <body
         className={cn(
@@ -92,13 +68,6 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50"
-        >
-          Skip to main content
-        </a>
-
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -107,25 +76,6 @@ export default function RootLayout({
         >
           <main id="main-content">{children}</main>
         </ThemeProvider>
-
-        <noscript>
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              right: 0,
-              background: "#ef4444",
-              color: "white",
-              padding: "1rem",
-              textAlign: "center",
-              zIndex: 9999,
-              fontFamily: "system-ui, -apple-system, sans-serif",
-            }}
-          >
-            JavaScript is required to view this portfolio properly.
-          </div>
-        </noscript>
       </body>
     </html>
   );

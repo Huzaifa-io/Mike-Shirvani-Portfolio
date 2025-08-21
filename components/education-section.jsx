@@ -24,13 +24,7 @@ const education = [
       "Web Development",
       "Programming Handheld Systems",
     ],
-  },
-  {
-    school: "Montgomery College, Rockville, MD",
-    period: "Aug 2020 – May 2022",
-    degree: "Associate’s in Computer Science",
-    coursework: [],
-  },
+  }
 ];
 
 export function EducationSection() {

@@ -1,3 +1,4 @@
+"use client"
 import { HeroSection } from "@/components/hero-section";
 import { SkillsSection } from "@/components/skills-section";
 import { ServicesSection } from "@/components/services-section";
