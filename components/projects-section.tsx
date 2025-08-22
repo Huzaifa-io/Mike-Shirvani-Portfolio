@@ -45,7 +45,6 @@ const projects = [
     liveUrl: "https://fakesstore.vercel.app/",
     category: "frontend",
   },
-
   {
     title: "Ticket Booking",
     description:

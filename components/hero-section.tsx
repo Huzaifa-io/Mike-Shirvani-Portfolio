@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useRef, useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, FileText, ChevronRight } from "lucide-react"
-import Link from "next/link"
-import Typed from "typed.js"
+import { useRef, useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, FileText, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import Typed from "typed.js";
 
 export function HeroSection() {
-  const typedRef = useRef<HTMLSpanElement>(null)
-  const typedInstance = useRef<Typed | null>(null)
+  const typedRef = useRef<HTMLSpanElement>(null);
+  const typedInstance = useRef<Typed | null>(null);
   useEffect(() => {
     if (typedRef.current) {
       typedInstance.current = new Typed(typedRef.current, {
@@ -37,15 +37,15 @@ export function HeroSection() {
         backDelay: 1500,
         loop: true,
         smartBackspace: true,
-      })
+      });
     }
 
     return () => {
       if (typedInstance.current) {
-        typedInstance.current.destroy()
+        typedInstance.current.destroy();
       }
-    }
-  }, [])
+    };
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,7 +56,7 @@ export function HeroSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -69,7 +69,7 @@ export function HeroSection() {
         damping: 10,
       },
     },
-  }
+  };
 
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center py-20 md:py-0">
@@ -86,7 +86,9 @@ export function HeroSection() {
             </h1>
 
             <div className="flex h-12 items-center justify-center">
-              <span className="text-xl text-muted-foreground md:text-2xl">I'm a</span>
+              <span className="text-xl text-muted-foreground md:text-2xl">
+                I'm a
+              </span>
               <span
                 ref={typedRef}
                 className="ml-2 text-xl font-medium text-primary md:text-2xl"
@@ -98,7 +100,12 @@ export function HeroSection() {
             className="max-w-4xl text-lg text-muted-foreground md:text-xl"
             variants={itemVariants}
           >
-            Accomplished Software Engineer with a proven track record in full stack web development, specializing in scalable, high-performance applications. Adept at collaborating with cross-functional teams to deliver innovative solutions. Passionate about leveraging technology to drive business success and enhance user experiences.
+            Full Stack Developer with 3+ years of experience building scalable
+            web applications using Java, Spring Boot, React, Node.js, and AWS.
+            Skilled in creating responsive UIs, secure backends, and efficient
+            APIs. Experienced in Agile workflows, CI/CD pipelines, and cloud
+            deployment. Passionate about clean code, performance optimization,
+            and delivering production-ready solutions.{" "}
           </motion.p>
 
           <motion.div
@@ -120,43 +127,48 @@ export function HeroSection() {
           </motion.div>
 
           {/* Conditionally render social and resume links */}
-            <motion.div
-              className="flex gap-4 pt-8"
-              variants={itemVariants}
+          <motion.div className="flex gap-4 pt-8" variants={itemVariants}>
+            <Link
+              href="https://github.com/mshirvan2/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Link href="https://github.com/mshirvan2/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="GitHub"
-                  className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
-                >
-                  <Github className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="https://www.linkedin.com/in/michaelshirvani/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="LinkedIn"
-                  className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Resume"
-                  className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
-                >
-                  <FileText className="h-5 w-5" />
-                </Button>
-              </Link>
-            </motion.div>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="GitHub"
+                className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
+              >
+                <Github className="h-5 w-5" />
+              </Button>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/michaelshirvani/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="LinkedIn"
+                className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
+              >
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Resume"
+                className="rounded-full transition-colors hover:bg-primary/10 hover:text-primary"
+              >
+                <FileText className="h-5 w-5" />
+              </Button>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

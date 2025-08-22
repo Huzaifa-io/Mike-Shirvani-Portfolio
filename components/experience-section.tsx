@@ -13,34 +13,6 @@ import { Building, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Software Engineer",
-    company: "TechNova Solutions, CA",
-    period: "Nov 2024 – Present",
-    description:
-      "Contributing to scalable web applications and backend systems, with a focus on performance, integrations, and cloud-native deployments.",
-    achievements: [
-      "Designed Express.js + MongoDB microservices, cutting API response times by 40%.",
-      "Integrated Stripe & Zoom APIs, enabling payments and virtual sessions that boosted retention by 30%.",
-      "Deployed with Docker + Kubernetes on AWS EKS, using GitHub Actions & Terraform for zero-downtime CI/CD.",
-      "Built React + Redux analytics dashboards, giving stakeholders real-time KPI insights.",
-      "Mentored 3 junior developers through code reviews and knowledge-sharing, raising team efficiency.",
-    ],
-    skills: [
-      "React",
-      "Redux",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Stripe API",
-      "Zoom API",
-      "Docker",
-      "Kubernetes",
-      "AWS EKS",
-      "Terraform",
-      "CI/CD",
-    ],
-  },
-  {
     title: "Full Stack Developer",
     company: "Car Source, Gaithersburg, MD",
     period: "May 2024 – Oct 2024",

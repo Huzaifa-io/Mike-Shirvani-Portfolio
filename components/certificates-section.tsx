@@ -18,45 +18,31 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    title: "AWS Certified Solutions Architect – Associate",
+    title: "SCRUM Fundamental Certification",
+    issuer: "SCRUMstudy",
+    date: "2024",
+    description:
+      "Certified understanding of Scrum principles and Agile methodologies for collaborative project management.",
+    image: "/placeholder.svg",
+    skills: ["Scrum", "Agile", "Project Management"],
+  },
+  {
+    title: "AWS Certified Cloud Practitioner (Enrolled)",
     issuer: "Amazon Web Services",
-    date: "Apr 2024",
+    date: "In Progress",
     description:
-      "Validated expertise in designing and deploying scalable, highly available, and fault-tolerant systems on AWS.",
+      "Currently preparing for the foundational AWS certification covering core cloud concepts, services, billing, and security.",
     image: "/placeholder.svg",
-    skills: [
-      "AWS",
-      "Cloud Architecture",
-      "Scalability",
-      "Security",
-    ],
+    skills: ["AWS", "Cloud Computing", "Cloud Fundamentals"],
   },
   {
-    title: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
-    date: "Dec 2023",
+    title: "AWS Certified Developer – Associate (Enrolled)",
+    issuer: "Amazon Web Services",
+    date: "In Progress",
     description:
-      "Demonstrated proficiency in managing Kubernetes clusters and deploying containerized applications.",
+      "Enrolled in certification track focusing on developing and maintaining applications on AWS using best practices.",
     image: "/placeholder.svg",
-    skills: [
-      "Kubernetes",
-      "Containers",
-      "DevOps",
-      "Automation",
-    ],
-  },
-  {
-    title: "Professional Scrum Master I (PSM I)",
-    issuer: "Scrum.org",
-    date: "Aug 2023",
-    description:
-      "Certified knowledge of Scrum framework and agile project management best practices.",
-    image: "/placeholder.svg",
-    skills: [
-      "Scrum",
-      "Agile",
-      "Project Management",
-    ],
+    skills: ["AWS", "Cloud Development", "Serverless", "DevOps"],
   },
 ]
 
@@ -97,15 +83,15 @@ export function CertificatesSection() {
   const cardHoverVariants = {
     hover: {
       y: -5,
-      transition: { type: "spring", stiffness: 300, damping: 10 }
-    }
+      transition: { type: "spring", stiffness: 300, damping: 10 },
+    },
   }
 
   const iconVariants = {
     hover: {
       rotate: [0, 10, -10, 0],
-      transition: { duration: 0.8 }
-    }
+      transition: { duration: 0.8 },
+    },
   }
 
   return (

@@ -9,7 +9,6 @@ import { ExperienceSection } from "@/components/experience-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
         <EducationSection />
         <ExperienceSection />
         <ContactSection />
-        <ScrollToTop />
       </main>
       <Footer />
     </div>
