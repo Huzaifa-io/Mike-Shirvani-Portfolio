@@ -31,7 +31,7 @@ export function EducationSection() {
   return (
     <section
       id="education"
-      className="min-h-screen flex items-center justify-center bg-muted/50 py-20"
+      className="flex items-center justify-center bg-muted/50 py-20"
     >
       <div className="container px-4 md:px-6 flex flex-col items-center justify-center text-center">
         {/* Section Heading */}
