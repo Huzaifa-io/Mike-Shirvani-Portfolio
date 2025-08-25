@@ -20,30 +20,30 @@ const certificates: Certificate[] = [
   {
     title: "SCRUM Fundamental Certification",
     issuer: "SCRUMstudy",
-    date: "2024",
+    date: "Oct - 2024",
     description:
       "Certified understanding of Scrum principles and Agile methodologies for collaborative project management.",
-    image: "/placeholder.svg",
+    image: "/scrum-fundamentals-certified.jpg",
     skills: ["Scrum", "Agile", "Project Management"],
   },
-  {
-    title: "AWS Certified Cloud Practitioner (Enrolled)",
-    issuer: "Amazon Web Services",
-    date: "In Progress",
-    description:
-      "Currently preparing for the foundational AWS certification covering core cloud concepts, services, billing, and security.",
-    image: "/placeholder.svg",
-    skills: ["AWS", "Cloud Computing", "Cloud Fundamentals"],
-  },
-  {
-    title: "AWS Certified Developer – Associate (Enrolled)",
-    issuer: "Amazon Web Services",
-    date: "In Progress",
-    description:
-      "Enrolled in certification track focusing on developing and maintaining applications on AWS using best practices.",
-    image: "/placeholder.svg",
-    skills: ["AWS", "Cloud Development", "Serverless", "DevOps"],
-  },
+  // {
+  //   title: "AWS Certified Cloud Practitioner (Enrolled)",
+  //   issuer: "Amazon Web Services",
+  //   date: "In Progress",
+  //   description:
+  //     "Currently preparing for the foundational AWS certification covering core cloud concepts, services, billing, and security.",
+  //   image: "/placeholder.svg",
+  //   skills: ["AWS", "Cloud Computing", "Cloud Fundamentals"],
+  // },
+  // {
+  //   title: "AWS Certified Developer – Associate (Enrolled)",
+  //   issuer: "Amazon Web Services",
+  //   date: "In Progress",
+  //   description:
+  //     "Enrolled in certification track focusing on developing and maintaining applications on AWS using best practices.",
+  //   image: "/placeholder.svg",
+  //   skills: ["AWS", "Cloud Development", "Serverless", "DevOps"],
+  // },
 ]
 
 export function CertificatesSection() {
@@ -113,7 +113,7 @@ export function CertificatesSection() {
 
         <motion.div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth px-2"
+          className="flex gap-6 overflow-x-autoscroll-smooth px-2"
           style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none" }}
           variants={containerVariants}
           initial="hidden"
@@ -123,7 +123,7 @@ export function CertificatesSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="flex-shrink-0 w-[350px] scroll-snap-align-start"
+              className="flex-shrink-0 m-auto w-[350px] scroll-snap-align-start"
             >
               <motion.div variants={cardHoverVariants}>
                 <Card className="h-full flex flex-col overflow-hidden">

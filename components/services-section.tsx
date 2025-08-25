@@ -1,8 +1,23 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Globe, Layout, Code, Server, RefreshCw, Smartphone, Webhook, Database } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Globe,
+  Layout,
+  Code,
+  Server,
+  RefreshCw,
+  Smartphone,
+  Webhook,
+  Database,
+} from "lucide-react";
 
 const services = [
   {
@@ -10,7 +25,14 @@ const services = [
     description:
       "End-to-end development of scalable web applications using modern frameworks and best practices. Expertise in both frontend and backend technologies to deliver robust solutions.",
     icon: <Globe className="h-10 w-10 text-primary" />,
-    skills: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL"],
+    skills: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+    ],
   },
   {
     title: "Cloud & DevOps Solutions",
@@ -40,7 +62,7 @@ const services = [
     icon: <RefreshCw className="h-10 w-10 text-primary" />,
     skills: ["Agile", "Scrum", "Jira", "Mentoring"],
   },
-]
+];
 
 export function ServicesSection() {
   const containerVariants = {
@@ -51,7 +73,7 @@ export function ServicesSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -60,7 +82,7 @@ export function ServicesSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   const cardHoverVariants = {
     hover: {
@@ -72,7 +94,7 @@ export function ServicesSection() {
         damping: 20,
       },
     },
-  }
+  };
 
   const iconVariants = {
     hidden: { scale: 0, rotate: -180 },
@@ -90,7 +112,7 @@ export function ServicesSection() {
       scale: 1.2,
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   const tagVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -103,7 +125,7 @@ export function ServicesSection() {
       scale: 1.1,
       transition: { duration: 0.2 },
     },
-  }
+  };
 
   return (
     <section id="services" className="py-20">
@@ -125,29 +147,40 @@ export function ServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Professional web development solutions tailored to your specific needs
+            Professional web development solutions tailored to your specific
+            needs
           </motion.p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants} whileHover="hover" className="h-full">
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover="hover"
+              className="h-full"
+            >
               <motion.div variants={cardHoverVariants} className="h-full">
                 <Card className="h-full flex flex-col transition-all">
                   <CardHeader className="pb-2 flex-shrink-0">
                     <div className="flex items-center gap-4 mb-2">
-                      <motion.div variants={iconVariants} className="p-2 rounded-full bg-primary/10 flex-shrink-0">
+                      <motion.div
+                        variants={iconVariants}
+                        className="p-2 rounded-full bg-primary/10 flex-shrink-0"
+                      >
                         {service.icon}
                       </motion.div>
                       <CardTitle className="text-lg">{service.title}</CardTitle>
                     </div>
-                    <CardDescription className="text-sm line-clamp-4">{service.description}</CardDescription>
+                    <CardDescription className="text-sm line-clamp-4">
+                      {service.description}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-end">
                     <div className="flex flex-wrap gap-2 mt-2">
@@ -172,5 +205,5 @@ export function ServicesSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

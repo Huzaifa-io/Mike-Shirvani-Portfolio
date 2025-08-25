@@ -12,7 +12,7 @@ import {
 const education = [
   {
     school: "University of Maryland, College Park, MD",
-    period: "Aug 2022 – Jan 2025",
+    period: "Aug 2020 – Jan 2025",
     degree:
       "Bachelor of Science in Computer Science, Minor in Technology Entrepreneurship (MTECH)",
     coursework: [
@@ -24,14 +24,18 @@ const education = [
       "Web Development",
       "Programming Handheld Systems",
     ],
-  }
+  },
 ];
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-20 bg-muted/50">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+    <section
+      id="education"
+      className="min-h-screen flex items-center justify-center bg-muted/50 py-20"
+    >
+      <div className="container px-4 md:px-6 flex flex-col items-center justify-center text-center">
+        {/* Section Heading */}
+        <div className="flex flex-col items-center space-y-4 mb-12">
           <motion.h2
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +56,8 @@ export function EducationSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Education Cards */}
+        <div className="flex justify-center w-full">
           {education.map((edu, index) => (
             <motion.div
               key={index}
@@ -60,6 +65,7 @@ export function EducationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="w-full max-w-lg"
             >
               <Card className="h-full">
                 <CardHeader>
@@ -73,7 +79,7 @@ export function EducationSection() {
                       <p className="text-sm font-semibold mb-1">
                         Relevant Coursework:
                       </p>
-                      <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                      <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 text-left">
                         {edu.coursework.map((course, i) => (
                           <li key={i}>{course}</li>
                         ))}
